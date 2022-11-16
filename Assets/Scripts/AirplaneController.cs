@@ -6,8 +6,6 @@ using UnityEngine.AI;
 public class AirplaneController : MonoBehaviour
 {
     [SerializeField] private AirplaneScriptableObject airplaneScriptableObject;
-    [SerializeField] private float wanderRadius = 5;
-    [SerializeField] private float standbyTimer = 0.5f;
 
     private Transform target;
     private NavMeshAgent airplaneAgent;
