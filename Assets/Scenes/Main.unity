@@ -666,6 +666,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1920081769718398818, guid: df3ed748b33e347d093c5eb104e90311, type: 3}
+      propertyPath: standbyTimer
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5684232133528882782, guid: df3ed748b33e347d093c5eb104e90311, type: 3}
       propertyPath: m_Name
       value: Airplane (2)
@@ -1215,6 +1219,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1920081769718398818, guid: df3ed748b33e347d093c5eb104e90311, type: 3}
+      propertyPath: standbyTimer
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5684232133528882782, guid: df3ed748b33e347d093c5eb104e90311, type: 3}
       propertyPath: m_Name
       value: Airplane (1)
@@ -1848,6 +1856,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1920081769718398818, guid: df3ed748b33e347d093c5eb104e90311, type: 3}
+      propertyPath: standbyTimer
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5684232133528882782, guid: df3ed748b33e347d093c5eb104e90311, type: 3}
       propertyPath: m_Name
       value: Airplane
