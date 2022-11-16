@@ -13,20 +13,19 @@ public class AirplaneController : MonoBehaviour
     private NavMeshAgent airplaneAgent;
     private float timer;
 
-
     void Start()
     {
         airplaneAgent = GetComponent<NavMeshAgent>();
-        timer = standbyTimer;
+        timer = airplaneScriptableObject.standbyTimer;
     }
 
     void Update()
     {
         timer += Time.deltaTime;
 
-        if (timer >= standbyTimer)
+        if (timer >= airplaneScriptableObject.standbyTimer)
         {
-            Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+            Vector3 newPos = RandomNavSphere(transform.position, airplaneScriptableObject.wanderRadius, -1);
             airplaneAgent.SetDestination(newPos);
             timer = 0;
         }

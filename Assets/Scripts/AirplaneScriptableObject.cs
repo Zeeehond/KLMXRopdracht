@@ -5,8 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AirplaneScriptableObject", menuName = "ScriptableObjects/Airplane")]
 public class AirplaneScriptableObject : ScriptableObject
 {
-    [SerializeField] private string airplaneType = "Fokker F.XXXVI";
-    [SerializeField] private string airplaneCompany = "KLM";
+    public string airplaneType = "Fokker F.XXXVI";
+    public string airplaneCompany = "KLM";
+    public float wanderRadius = 5;
+    public float standbyTimer = 0.5f;
 
 
 }

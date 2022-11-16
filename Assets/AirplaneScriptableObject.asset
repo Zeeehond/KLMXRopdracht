@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   airplaneType: Fokker F.XXXVI
   airplaneCompany: KLM
+  wanderRadius: 5
+  standbyTimer: 0.5
