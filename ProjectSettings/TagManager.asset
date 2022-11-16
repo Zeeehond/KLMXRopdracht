@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hangar
   - Airplane
+  - AirplaneLight
   layers:
   - Default
   - TransparentFX

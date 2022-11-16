@@ -55,7 +55,7 @@ public class AirplaneController : MonoBehaviour
         return navHit.position;
     }
 
-    void MoveToHangar()
+    public void MoveToHangar()
     {
         airplaneScriptableObject.parked = true;
 

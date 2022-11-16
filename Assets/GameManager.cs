@@ -38,7 +38,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void EnableLights()
+    public void ParkAirplanes()
+    {
+        GameObject[] airplaneObjects = GameObject.FindGameObjectsWithTag("Airplane");
+        foreach (GameObject airplane in airplaneObjects)
+        {
+            airplane.GetComponent<AirplaneController>().MoveToHangar();
+        }
+    }
+
+    public void EnableLights()
     {
         GameObject[] airplaneLightObjects = GameObject.FindGameObjectsWithTag("AirplaneLight");
         foreach (GameObject airplaneLight in airplaneLightObjects)
@@ -46,7 +55,6 @@ public class GameManager : MonoBehaviour
             Light currentAirplaneLight = airplaneLight.GetComponent<Light>();
             currentAirplaneLight.enabled = true;
         }
-
     }
 
 }
