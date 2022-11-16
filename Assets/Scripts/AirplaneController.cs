@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class AirplaneController : MonoBehaviour
 {
@@ -10,9 +11,11 @@ public class AirplaneController : MonoBehaviour
     private Transform target;
     private NavMeshAgent airplaneAgent;
     private float timer;
+    public int airplaneNumber;
 
     void Start()
     {
+        airplaneScriptableObject.parked = false;
         airplaneAgent = GetComponent<NavMeshAgent>();
         timer = airplaneScriptableObject.standbyTimer;
     }
@@ -20,12 +23,19 @@ public class AirplaneController : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-
-        if (timer >= airplaneScriptableObject.standbyTimer)
+        if (!airplaneScriptableObject.parked)
         {
-            Vector3 newPos = RandomNavSphere(transform.position, airplaneScriptableObject.wanderRadius, -1);
-            airplaneAgent.SetDestination(newPos);
-            timer = 0;
+            if (timer >= airplaneScriptableObject.standbyTimer)
+            {
+                Vector3 newPos = RandomNavSphere(transform.position, airplaneScriptableObject.wanderRadius, -1);
+                airplaneAgent.SetDestination(newPos);
+                timer = 0;
+            }
+        }
+
+        if(Input.GetKeyDown("space"))
+        {
+            MoveToHangar();
         }
     }
 
@@ -42,4 +52,19 @@ public class AirplaneController : MonoBehaviour
         return navHit.position;
     }
 
+    void MoveToHangar()
+    {
+        airplaneScriptableObject.parked = true;
+
+        GameObject[] hangarObjects = GameObject.FindGameObjectsWithTag("Hangar");
+        foreach (GameObject hangar in hangarObjects)
+        {
+            int hangarNumber = int.Parse(hangar.transform.Find("HangarNumber").GetComponent<TextMeshPro>().text);
+            if (hangarNumber == airplaneNumber)
+            {
+                airplaneAgent.SetDestination(hangar.transform.position);
+                break;
+            }
+        }
+    }
 }

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     private int hangarNumber = 1;
     private int airplaneNumber = 1;
+    [SerializeField] private AirplaneScriptableObject airplaneScriptableObject;
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +31,16 @@ public class GameManager : MonoBehaviour
         GameObject[] airplaneObjects = GameObject.FindGameObjectsWithTag("Airplane");
         foreach (GameObject airplane in airplaneObjects)
         {
+            airplane.GetComponent<AirplaneController>().airplaneNumber = airplaneNumber;
             TextMeshPro textMeshPro = airplane.transform.Find("AirplaneNumber").GetComponent<TextMeshPro>();
             textMeshPro.SetText("{0}", airplaneNumber);
             airplaneNumber++;
         }
     }
 
+    void ParkAirplanes()
+    {
+        airplaneScriptableObject.parked = true;
+
+    }
 }

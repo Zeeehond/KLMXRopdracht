@@ -9,6 +9,7 @@ public class AirplaneScriptableObject : ScriptableObject
     public string airplaneCompany = "KLM";
     public float wanderRadius = 5;
     public float standbyTimer = 0.5f;
+    public bool parked = false;
 
 
 }

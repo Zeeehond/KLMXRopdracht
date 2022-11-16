@@ -15,4 +15,5 @@ MonoBehaviour:
   airplaneType: Fokker F.XXXVI
   airplaneCompany: KLM
   wanderRadius: 5
-  standbyTimer: 0.5
+  standbyTimer: 1.5
+  parked: 0
