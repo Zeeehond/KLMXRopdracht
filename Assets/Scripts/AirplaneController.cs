@@ -22,6 +22,8 @@ public class AirplaneController : MonoBehaviour
 
     void Update()
     {
+
+        //Makes the airplane move to a random destination on the navmesh
         timer += Time.deltaTime;
         if (!airplaneScriptableObject.parked)
         {
@@ -39,6 +41,7 @@ public class AirplaneController : MonoBehaviour
         }
     }
 
+    //Gets a random destionation for the airplane to move to
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
     {
         Vector3 randDirection = Random.insideUnitSphere * dist;
@@ -67,4 +70,5 @@ public class AirplaneController : MonoBehaviour
             }
         }
     }
+
 }

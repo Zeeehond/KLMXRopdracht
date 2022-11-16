@@ -38,9 +38,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void ParkAirplanes()
+    void EnableLights()
     {
-        airplaneScriptableObject.parked = true;
+        GameObject[] airplaneLightObjects = GameObject.FindGameObjectsWithTag("AirplaneLight");
+        foreach (GameObject airplaneLight in airplaneLightObjects)
+        {
+            Light currentAirplaneLight = airplaneLight.GetComponent<Light>();
+            currentAirplaneLight.enabled = true;
+        }
 
     }
+
 }
