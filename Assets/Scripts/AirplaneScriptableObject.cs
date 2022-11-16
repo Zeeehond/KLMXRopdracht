@@ -10,6 +10,4 @@ public class AirplaneScriptableObject : ScriptableObject
     public float wanderRadius = 5;
     public float standbyTimer = 0.5f;
     public bool parked = false;
-
-
 }

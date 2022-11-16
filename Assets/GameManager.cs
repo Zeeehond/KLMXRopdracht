@@ -7,10 +7,10 @@ public class GameManager : MonoBehaviour
 {
     private int hangarNumber = 1;
     private int airplaneNumber = 1;
+
     [SerializeField] private AirplaneScriptableObject airplaneScriptableObject;
     [SerializeField] private GameObject feedbackText;
 
-    // Start is called before the first frame update
     void Start()
     {
         AssignHangarNumbers();

@@ -22,7 +22,6 @@ public class AirplaneController : MonoBehaviour
 
     void Update()
     {
-
         //Makes the airplane move to a random destination on the navmesh
         timer += Time.deltaTime;
         if (!airplaneScriptableObject.parked)
@@ -35,23 +34,20 @@ public class AirplaneController : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space"))
         {
             MoveToHangar();
         }
     }
 
-    //Gets a random destionation for the airplane to move to
+    //Gets a random destination for the airplane to move to
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
     {
         Vector3 randDirection = Random.insideUnitSphere * dist;
-
         randDirection += origin;
-
         NavMeshHit navHit;
 
         NavMesh.SamplePosition(randDirection, out navHit, dist, layermask);
-
         return navHit.position;
     }
 
