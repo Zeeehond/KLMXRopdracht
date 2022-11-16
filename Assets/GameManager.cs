@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     private int hangarNumber = 1;
     private int airplaneNumber = 1;
     [SerializeField] private AirplaneScriptableObject airplaneScriptableObject;
+    [SerializeField] private GameObject feedbackText;
 
     // Start is called before the first frame update
     void Start()
@@ -40,11 +41,18 @@ public class GameManager : MonoBehaviour
 
     public void ParkAirplanes()
     {
+        StartCoroutine(ParkingFeedbackCoroutine());
         GameObject[] airplaneObjects = GameObject.FindGameObjectsWithTag("Airplane");
         foreach (GameObject airplane in airplaneObjects)
         {
             airplane.GetComponent<AirplaneController>().MoveToHangar();
         }
+    }
+
+    IEnumerator ParkingFeedbackCoroutine()
+    {
+        yield return new WaitForSeconds(2.5f);
+        feedbackText.SetActive(true);
     }
 
     public void EnableLights()
